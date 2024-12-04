@@ -43,7 +43,7 @@ export function Footer() {
                 </a>
                 <span className="mx-1">/</span>
                 <a href="tel:01142325695" className="hover:text-primary">
-                  42325695
+                 (011) 42325695
                 </a>
               </li>
               <li className="flex items-center">

@@ -98,7 +98,7 @@ export function ContactForm() {
               {" "}/{" "}
               <a href="tel:01142325695" className="hover:underline">(011) 42325695</a>
             </p>
-            <p className="mb-4 hover:underline">Email: <a href="mailto:escribaniaringueletscatolini@gmail.com">escribaniaringueletscatolini@gmail.com</a></p>
+            <p className="mb-4">Email: <a href="mailto:escribaniaringueletscatolini@gmail.com" className="hover:underline">escribaniaringueletscatolini@gmail.com</a></p>
             <h4 className="text-lg font-semibold mb-2">Horario de Atención</h4>
             <p className="mb-4">Lunes a Viernes de 10:00 a 16:00</p>
             <div className="h-64 md:h-80 relative rounded-lg overflow-hidden">
