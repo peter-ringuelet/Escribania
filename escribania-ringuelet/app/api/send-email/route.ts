@@ -2,14 +2,20 @@ import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-    if (!process.env.RESEND_API_KEY) {
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
+        console.error('Error: RESEND_API_KEY no está configurada');
         return NextResponse.json(
-            { success: false, error: 'RESEND_API_KEY no está configurada' },
+            { 
+                success: false, 
+                error: 'Error de configuración del servidor' 
+            },
             { status: 500 }
         );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(resendApiKey);
 
     try {
         const body = await request.json();
@@ -34,11 +40,11 @@ export async function POST(request: Request) {
         console.log('Respuesta de Resend:', data);
         return NextResponse.json({ success: true, data });
     } catch (error) {
-        console.error('Error al enviar email:', error);
+        console.error('Error detallado:', error);
         return NextResponse.json(
             {
                 success: false,
-                error: error instanceof Error ? error.message : 'Error desconocido'
+                error: error instanceof Error ? error.message : 'Error desconocido al enviar el email'
             },
             { status: 500 }
         );
