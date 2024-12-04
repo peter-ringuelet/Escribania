@@ -48,7 +48,7 @@ export function AboutUs() {
             >
               <p className="mb-4">
                 Somos una escribanía con más de 50 años de trayectoria en la zona sur del Gran Buenos Aires. 
-                Fundada por el Escribano Jorge E. Ringuelet, quien estableció las bases de nuestra práctica 
+                Fundada por el Escribano Andrés Ringuelet, quien estableció las bases de nuestra práctica 
                 profesional fundamentada en la excelencia y el compromiso con nuestros clientes.
               </p>
               <p className="mb-4">

@@ -157,7 +157,7 @@ export function ContactForm() {
                   <SelectItem value="sucesiones">Sucesiones</SelectItem>
                   <SelectItem value="compraventa">Compraventa de Inmuebles</SelectItem>
                   <SelectItem value="sociedades">Constitución de Sociedades</SelectItem>
-                  <SelectItem value="poderes">Poderes</SelectItem>
+                  <SelectItem value="poderes">Poderes y Autorizaciones de Viaje</SelectItem>
                   <SelectItem value="certificaciones">Certificaciones</SelectItem>
                   <SelectItem value="otro">Otro</SelectItem>
                 </SelectContent>

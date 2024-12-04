@@ -29,7 +29,7 @@ export function Clients() {
         >
           Empresas que Confían en Nosotros
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
