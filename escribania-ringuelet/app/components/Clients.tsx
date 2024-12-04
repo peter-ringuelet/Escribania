@@ -4,8 +4,8 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 const clients = [
-  { name: "Banco Provincia", logo: "/bancoprovincia.png" },
-  { name: "Banco Nación", logo: "/banconacion.png" },
+  { name: "Banco Provincia", logo: "/bancoProvincia.png" },
+  { name: "Banco Nación", logo: "/bancoNacion.png" },
   { name: "Santander", logo: "/santander.png" },
   { name: "Ternium Siderar", logo: "/ternium.png" },
   { name: "Conuar", logo: "/conuar.png" },
