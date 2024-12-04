@@ -1,0 +1,96 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Menu } from 'lucide-react'
+import Image from "next/image"
+
+const sections = ["inicio", "servicios", "nosotros", "noticias", "consulta"];
+
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom > 100
+        }
+        return false
+      })
+      setActiveSection(currentSection || "")
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
+  }
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#1d1d1f] text-white">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <span className="text-xl font-bold">
+          <Image
+            src="/logoR.png"
+            alt="Escribanía Ringuelet Logo"
+            width={150}
+            height={40}
+            priority
+          />
+        </span>
+        
+        <nav className="hidden md:flex items-center space-x-6">
+          {sections.map((section) => (
+            <button
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className={`text-sm font-medium hover:text-primary transition-colors ${
+                activeSection === section ? "text-primary" : ""
+              }`}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </button>
+          ))}
+        </nav>
+
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" className="text-white">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Abrir menú</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-[#1d1d1f] text-white">
+            <nav className="flex flex-col space-y-4">
+              {sections.map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  )
+}
+
