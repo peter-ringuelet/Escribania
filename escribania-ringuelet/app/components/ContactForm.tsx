@@ -51,7 +51,8 @@ export function ContactForm() {
       } else {
         throw new Error('Error al enviar el formulario');
       }
-    } catch (error) {
+    } catch (err) {
+      console.error('Error:', err);
       toast({
         title: "Error",
         description: "Hubo un problema al enviar tu solicitud. Por favor, intenta nuevamente.",
