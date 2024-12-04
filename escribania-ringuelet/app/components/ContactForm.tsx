@@ -93,7 +93,7 @@ export function ContactForm() {
             <h3 className="text-xl font-semibold mb-4">Información de Contacto</h3>
             <p className="mb-2">Avenida Castex 3489 Oficina 6, Canning - Ezeiza, Buenos Aires</p>
             <p className="mb-2">Teléfono: (011) 42958794 / 42325695</p>
-            <p className="mb-4">Email: escribania@ringueletscatolini.com.ar</p>
+            <p className="mb-4">Email: <a href="mailto:escribaniaringueletscatolini@gmail.com">escribaniaringueletscatolini@gmail.com</a></p>
             <h4 className="text-lg font-semibold mb-2">Horario de Atención</h4>
             <p className="mb-4">Lunes a Viernes de 10:00 a 16:00</p>
             <div className="h-64 md:h-80 relative rounded-lg overflow-hidden">

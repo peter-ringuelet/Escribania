@@ -27,19 +27,30 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 text-primary" />
-                Avenida Castex 3489 Oficina 6, Canning
+                <a 
+                  href="https://maps.google.com/?q=Avenida+Castex+3489+Oficina+6,+Canning,+Buenos+Aires,+Argentina" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Avenida Castex 3489 Oficina 6, Canning
+                </a>
               </li>
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-primary" />
-                (011) 42958794 / 42325695
+                <a href="tel:01142958794" className="hover:text-primary">
+                  (011) 42958794
+                </a>
+                <span className="mx-1">/</span>
+                <a href="tel:01142325695" className="hover:text-primary">
+                  42325695
+                </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-primary" />
-                <span className="text-sm">escribania@ringueletscatolini.com.ar</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-primary" />
-                <span className="text-sm">escribaniaringueletscatolini@gmail.com</span>
+                <a href="mailto:escribaniaringueletscatolini@gmail.com" className="hover:text-primary">
+                  escribaniaringueletscatolini@gmail.com
+                </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/escribania_ringueletscatolini/" 
@@ -59,7 +70,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-base font-semibold mb-4 text-primary">Enlaces Rápidos</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               <li>
                 <button onClick={() => scrollToSection('servicios')} className="hover:text-primary">
                   Nuestros Servicios
