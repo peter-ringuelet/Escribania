@@ -1,18 +1,46 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { useEffect, useState, useRef } from "react"
 
 export function WhatsAppButton() {
+  const [isVisible, setIsVisible] = useState(false);
+  const audioRef = useRef(new Audio('/notification-sound.mp3'));
+  const [hasPlayed, setHasPlayed] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleClick = () => {
+    if (!hasPlayed) {
+      audioRef.current.play().catch(e => console.log('Error reproduciendo audio:', e));
+      setHasPlayed(true);
+    }
+  };
+
   return (
     <div className="fixed bottom-4 right-4 z-50 flex items-center">
-      <p className="mr-2 text-sm bg-white p-2 rounded-lg shadow-md hidden md:block">¿Consultas? Escríbenos por WhatsApp</p>
+      <p className={`mr-2 text-sm bg-white p-2 rounded-lg shadow-md hidden md:block
+        transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+        ¿Consultas? Escríbenos por WhatsApp
+      </p>
       <a
         href="https://wa.me/541142958794"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
+        onClick={handleClick}
       >
-        <Button size="lg" className="rounded-full h-16 w-16 bg-[#25D366] hover:bg-[#128C7E] flex items-center justify-center p-0">
+        <Button 
+          size="lg" 
+          className={`rounded-full h-16 w-16 bg-[#25D366] hover:bg-[#128C7E] flex items-center justify-center p-0
+            transition-all duration-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
