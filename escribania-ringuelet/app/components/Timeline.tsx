@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { TimelineItem } from "@/components/timeline-item"
 import { MotionWrapper } from "@/components/motion-wrapper"
 
