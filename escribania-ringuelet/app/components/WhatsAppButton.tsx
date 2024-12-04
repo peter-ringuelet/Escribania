@@ -21,9 +21,14 @@ export function WhatsAppButton() {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex items-center">
-      <p className="mr-2 text-sm bg-white p-2 rounded-lg shadow-md hidden md:block">
+      <motion.p 
+        className="mr-2 text-sm bg-white p-2 rounded-lg shadow-md hidden md:block"
+        initial={{ x: 50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+      >
         ¿Consultas? Escríbenos por WhatsApp
-      </p>
+      </motion.p>
       <motion.a
         href="https://wa.me/542214597704"
         target="_blank"
