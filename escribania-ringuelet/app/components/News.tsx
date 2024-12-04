@@ -83,7 +83,7 @@ export function News() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Noticias
@@ -91,7 +91,7 @@ export function News() {
         <div className="relative">
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-300 ease-out"
+              className="flex transition-transform duration-700 ease-out"
               style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
             >
               {news.map((item, index) => (
@@ -112,7 +112,7 @@ export function News() {
                     }
                     transition={{
                       duration: 1.4,
-                      delay: isInView ? index * 0.45 : 0,
+                      delay: isInView ? index * 0.65 : 0,
                       type: "spring",
                       stiffness: 70,
                       damping: 11

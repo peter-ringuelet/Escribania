@@ -78,13 +78,13 @@ export function Header() {
               <span className="sr-only">Abrir menú</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-[#1d1d1f] text-white">
-            <nav className="flex flex-col space-y-4">
+          <SheetContent side="right" className="bg-[#1d1d1f] text-white w-[200px] pt-12">
+            <nav className="flex flex-col">
               {sections.map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-lg font-medium hover:text-primary transition-colors"
+                  className="text-base font-medium hover:text-primary transition-colors py-4 text-left px-4 border-b border-gray-800"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
