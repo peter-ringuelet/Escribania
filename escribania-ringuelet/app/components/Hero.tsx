@@ -15,6 +15,7 @@ export function Hero() {
           layout="fill"
           objectFit="cover"
           quality={100}
+          priority
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>

@@ -60,6 +60,7 @@ export function AboutUs() {
               src="/aboutUs.webp"
               alt="Equipo de Escribanía Ringuelet"
               fill
+              loading="eager"
               className="object-cover rounded-lg"
             />
           </motion.div>
