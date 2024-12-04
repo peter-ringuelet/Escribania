@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
 export function WhatsAppButton() {
