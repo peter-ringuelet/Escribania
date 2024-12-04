@@ -5,7 +5,6 @@ import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 
 export function WhatsAppButton() {
-  const [hasPlayed, setHasPlayed] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export function WhatsAppButton() {
   const handleButtonClick = () => {
     if (audioRef.current) {
       audioRef.current.play().catch(e => console.log('Error reproduciendo audio:', e));
-      setHasPlayed(true);
     }
   };
 
