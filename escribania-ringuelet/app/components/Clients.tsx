@@ -1,7 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { MotionWrapper } from "@/components/motion-wrapper"
+import { motion } from "framer-motion"
+import { useRef } from "react"
+import { useInView } from "framer-motion"
 
 const clients = [
   { name: "Banco Provincia", logo: "/bancoProvincia.png" },
@@ -13,27 +15,41 @@ const clients = [
 ]
 
 export function Clients() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   return (
     <section id="clientes" className="py-16 md:py-24">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MotionWrapper>
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            Empresas que Confían en Nosotros
-          </h2>
-        </MotionWrapper>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold mb-12 text-center"
+        >
+          Empresas que Confían en Nosotros
+        </motion.h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
           {clients.map((client, index) => (
-            <MotionWrapper key={client.name} delay={index * 0.1}>
-              <div className="flex items-center justify-center">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            </MotionWrapper>
+            <motion.div
+              key={client.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ 
+                duration: 0.7,
+                delay: index * 0.2,
+                ease: "easeOut"
+              }}
+              className="flex items-center justify-center"
+            >
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={120}
+                height={60}
+                className="grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </motion.div>
           ))}
         </div>
       </div>

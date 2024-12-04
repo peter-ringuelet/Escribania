@@ -71,7 +71,10 @@ export function ContactForm() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ 
+            duration: 0.8,
+            ease: "easeOut"
+          }}
           viewport={{ once: true }}
           className="text-3xl font-bold mb-8 text-center"
         >
@@ -81,7 +84,11 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.6 }}
+            transition={{ 
+              duration: 0.9,
+              ease: "easeOut"
+            }}
+            className="space-y-4"
           >
             <h3 className="text-xl font-semibold mb-4">Información de Contacto</h3>
             <p className="mb-2">Avenida Castex 3489 Oficina 6, Canning - Ezeiza, Buenos Aires</p>
@@ -105,7 +112,11 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ 
+              duration: 0.9,
+              delay: 0.2,
+              ease: "easeOut"
+            }}
           >
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input

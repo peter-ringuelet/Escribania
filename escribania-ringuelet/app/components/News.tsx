@@ -124,15 +124,15 @@ export function News() {
                         : { opacity: 0, scale: 0.8, rotateY: 90 }
                     }
                     transition={{
-                      duration: 0.4,
-                      delay: isInView ? index * 0.2 : 0,
+                      duration: 1.4,
+                      delay: isInView ? index * 0.45 : 0,
                       type: "spring",
-                      stiffness: 120,
-                      damping: 20
+                      stiffness: 70,
+                      damping: 11
                     }}
                     className="h-full"
                   >
-                    <Card className="h-full flex flex-col">
+                    <Card className="h-full flex flex-col overflow-hidden">
                       <div className="relative h-48">
                         <Image
                           src={item.image}

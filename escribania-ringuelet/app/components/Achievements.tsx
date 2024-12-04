@@ -39,7 +39,7 @@ export function Achievements() {
           ref={ref}
           initial={{ opacity: 0, x: 100 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Nuestros Logros
@@ -50,7 +50,11 @@ export function Achievements() {
               key={achievement.title}
               initial={{ opacity: 0, x: 100 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ 
+                duration: 0.6,
+                delay: index * 0.25,
+                ease: "easeOut"
+              }}
             >
               <AchievementCard {...achievement} />
             </motion.div>

@@ -24,16 +24,18 @@ export function Services() {
         </MotionWrapper>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <MotionWrapper key={index} delay={index * 0.4}>
-              <Card className="bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-black">
-                    {<service.icon className="h-5 w-5 mr-2 text-secondary" />}
-                    {service.title}
+            <MotionWrapper key={index} delay={index * 0.1}>
+              <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
+                <CardHeader className="flex-shrink-0">
+                  <CardTitle className="flex items-center gap-2 text-black">
+                    <service.icon className="h-5 w-5 text-secondary flex-shrink-0" />
+                    <span className="line-clamp-1">{service.title}</span>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-black">{service.description}</CardDescription>
+                <CardContent className="flex-grow">
+                  <CardDescription className="text-black line-clamp-3">
+                    {service.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             </MotionWrapper>
