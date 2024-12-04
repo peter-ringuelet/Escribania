@@ -4,8 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { FileDown, ChevronLeft, ChevronRight, Calendar, Clock } from 'lucide-react'
+import { FileDown, ChevronLeft, ChevronRight, Calendar } from 'lucide-react'
 import Image from 'next/image'
 
 const news = [
