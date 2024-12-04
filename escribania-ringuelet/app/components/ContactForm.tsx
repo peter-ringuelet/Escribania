@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from 'react'
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { MotionWrapper } from "@/components/motion-wrapper"
 
 export function ContactForm() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,17 +71,18 @@ export function ContactForm() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Solicitar Consulta
         </motion.h2>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2" ref={ref}>
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl font-semibold mb-4">Información de Contacto</h3>
             <p className="mb-2">Avenida Castex 3489 Oficina 6, Canning - Ezeiza, Buenos Aires</p>
@@ -96,61 +102,62 @@ export function ContactForm() {
               ></iframe>
             </div>
           </motion.div>
-          <motion.form 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            onSubmit={handleSubmit} 
-            className="space-y-4"
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Input
-              type="text"
-              name="name"
-              placeholder="Nombre completo"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <Input
-              type="tel"
-              name="phone"
-              placeholder="Teléfono"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-            <Select onValueChange={handleSelectChange} value={formData.service}>
-              <SelectTrigger>
-                <SelectValue placeholder="Selecciona un servicio" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="escrituras">Escrituras</SelectItem>
-                <SelectItem value="sucesiones">Sucesiones</SelectItem>
-                <SelectItem value="compraventa">Compraventa de Inmuebles</SelectItem>
-                <SelectItem value="sociedades">Constitución de Sociedades</SelectItem>
-                <SelectItem value="poderes">Poderes</SelectItem>
-                <SelectItem value="certificaciones">Certificaciones</SelectItem>
-                <SelectItem value="otro">Otro</SelectItem>
-              </SelectContent>
-            </Select>
-            <Textarea
-              name="message"
-              placeholder="Describe brevemente tu consulta"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="min-h-[200px]"
-            />
-            <Button type="submit" className="w-full">Enviar Consulta</Button>
-          </motion.form>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                type="text"
+                name="name"
+                placeholder="Nombre completo"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <Input
+                type="tel"
+                name="phone"
+                placeholder="Teléfono"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+              <Select onValueChange={handleSelectChange} value={formData.service}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Selecciona un servicio" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="escrituras">Escrituras</SelectItem>
+                  <SelectItem value="sucesiones">Sucesiones</SelectItem>
+                  <SelectItem value="compraventa">Compraventa de Inmuebles</SelectItem>
+                  <SelectItem value="sociedades">Constitución de Sociedades</SelectItem>
+                  <SelectItem value="poderes">Poderes</SelectItem>
+                  <SelectItem value="certificaciones">Certificaciones</SelectItem>
+                  <SelectItem value="otro">Otro</SelectItem>
+                </SelectContent>
+              </Select>
+              <Textarea
+                name="message"
+                placeholder="Describe brevemente tu consulta"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="min-h-[200px]"
+              />
+              <Button type="submit" className="w-full">Enviar Consulta</Button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

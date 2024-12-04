@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { TimelineItem } from "@/components/timeline-item"
+import { MotionWrapper } from "@/components/motion-wrapper"
 
 const timelineEvents = [
   {
@@ -40,17 +41,16 @@ export function Timeline() {
   return (
     <section id="trayectoria" className="py-16 md:py-24">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold mb-12 text-center"
-        >
-          Nuestra Trayectoria
-        </motion.h2>
+        <MotionWrapper>
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Nuestra Trayectoria
+          </h2>
+        </MotionWrapper>
         <div className="space-y-8 max-w-3xl mx-auto">
           {timelineEvents.map((event, index) => (
-            <TimelineItem key={event.year} {...event} delay={index * 0.2} />
+            <MotionWrapper key={event.year} delay={index * 0.2}>
+              <TimelineItem {...event} />
+            </MotionWrapper>
           ))}
         </div>
       </div>

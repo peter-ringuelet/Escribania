@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
+import { motion, useInView } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FileDown, ChevronLeft, ChevronRight, Calendar } from 'lucide-react'
@@ -55,6 +55,9 @@ const news = [
 export function News() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [slidesToShow, setSlidesToShow] = useState(3)
+  const [animatingIndex, setAnimatingIndex] = useState<number | null>(null)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   useEffect(() => {
     const handleResize = () => {
@@ -73,19 +76,22 @@ export function News() {
   }, [])
 
   const nextSlide = () => {
+    setAnimatingIndex(currentIndex + slidesToShow)
     setCurrentIndex((prevIndex) => (prevIndex + 1) % (news.length - slidesToShow + 1))
   }
 
   const prevSlide = () => {
+    setAnimatingIndex(currentIndex - 1)
     setCurrentIndex((prevIndex) => (prevIndex - 1 + (news.length - slidesToShow + 1)) % (news.length - slidesToShow + 1))
   }
 
   const goToSlide = (index: number) => {
+    setAnimatingIndex(index)
     setCurrentIndex(index)
   }
 
   return (
-    <section id="noticias" className="py-16 md:py-24 bg-gray-50">
+    <section id="noticias" className="py-16 md:py-24 bg-gray-50" ref={ref}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -98,46 +104,62 @@ export function News() {
         <div className="relative">
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-300 ease-in-out"
+              className="flex transition-transform duration-300 ease-out"
               style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
             >
               {news.map((item, index) => (
-                <div key={index} className={`flex-shrink-0 px-2 ${
-                  slidesToShow === 3 ? 'w-1/3' : 
-                  slidesToShow === 2 ? 'w-1/2' : 
-                  'w-full'
-                }`}>
-                  <Card className="h-full flex flex-col overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={400}
-                      height={200}
-                      className="object-cover w-full h-40"
-                    />
-                    <CardHeader className="flex-grow">
-                      <CardTitle className="text-lg">{item.title}</CardTitle>
-                      <CardDescription className="flex items-center text-sm text-gray-500">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {item.date}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex flex-col justify-between">
-                      <p className="text-sm mb-4 line-clamp-3">{item.description}</p>
-                      {item.pdf && (
-                        <a 
-                          href={item.pdf} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="outline" size="sm" className="w-full">
-                            <FileDown className="mr-2" />
-                            Descargar PDF
-                          </Button>
-                        </a>
-                      )}
-                    </CardContent>
-                  </Card>
+                <div
+                  key={index}
+                  className={`flex-shrink-0 px-2 ${
+                    slidesToShow === 3 ? 'w-1/3' : 
+                    slidesToShow === 2 ? 'w-1/2' : 
+                    'w-full'
+                  }`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
+                    animate={
+                      isInView || animatingIndex === index 
+                        ? { opacity: 1, scale: 1, rotateY: 0 } 
+                        : { opacity: 0, scale: 0.8, rotateY: 90 }
+                    }
+                    transition={{
+                      duration: 0.4,
+                      delay: isInView ? index * 0.2 : 0,
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 20
+                    }}
+                    className="h-full"
+                  >
+                    <Card className="h-full flex flex-col">
+                      <div className="relative h-48">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <CardHeader className="flex-grow">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                          <Calendar className="h-4 w-4" />
+                          {new Date(item.date).toLocaleDateString()}
+                        </div>
+                        <CardTitle className="line-clamp-2">{item.title}</CardTitle>
+                        <CardDescription className="line-clamp-2">
+                          {item.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <Button variant="outline" className="w-full" asChild>
+                          <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                            <FileDown className="mr-2 h-4 w-4" /> Descargar PDF
+                          </a>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </div>
               ))}
             </div>

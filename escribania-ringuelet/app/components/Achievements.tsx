@@ -1,8 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { AchievementCard } from "@/components/achievement-card"
 import { Users, Award, BookOpen, Heart } from 'lucide-react'
+import { useRef } from "react"
 
 const achievements = [
   {
@@ -28,12 +29,16 @@ const achievements = [
 ]
 
 export function Achievements() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   return (
     <section id="logros" className="py-16 md:py-24 bg-muted/30">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-12 text-center"
         >
@@ -41,7 +46,14 @@ export function Achievements() {
         </motion.h2>
         <div className="grid gap-8 md:grid-cols-4">
           {achievements.map((achievement, index) => (
-            <AchievementCard key={achievement.title} {...achievement} delay={index * 0.2} />
+            <motion.div
+              key={achievement.title}
+              initial={{ opacity: 0, x: 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <AchievementCard {...achievement} />
+            </motion.div>
           ))}
         </div>
       </div>
