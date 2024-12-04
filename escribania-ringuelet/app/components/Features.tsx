@@ -18,7 +18,7 @@ export function Features() {
             <div>
               <h3 className="font-semibold text-[#231f20]">Experiencia Comprobada</h3>
               <p className="text-sm text-black">
-                Más de 45 años de trayectoria en servicios notariales
+                Más de 50 años de trayectoria en servicios notariales
               </p>
             </div>
           </div>

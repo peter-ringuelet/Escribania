@@ -30,7 +30,7 @@ export function Hero() {
           <span className="text-primary">Excelencia</span>
         </h1>
         <p className="mx-auto max-w-[700px] text-white md:text-xl">
-          Más de 45 años brindando seguridad jurídica y confianza a nuestros clientes.
+          Más de 50 años brindando seguridad jurídica y confianza a nuestros clientes.
           Primer registro notarial de Ezeiza.
         </p>
         <div className="flex flex-col gap-4 min-[400px]:flex-row">

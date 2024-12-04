@@ -5,12 +5,12 @@ import { FileText, Users, Home, Briefcase, Scale, FileSignature } from 'lucide-r
 import { motion } from "framer-motion"
 
 const services = [
-  { title: "Escrituras", description: "Redacción y certificación de escrituras públicas para diversos actos jurídicos.", icon: FileText },
-  { title: "Sucesiones", description: "Asesoramiento y tramitación completa de procesos sucesorios.", icon: Users },
+  { title: "Fideicomisos", description: "Redacción y certificación de contratos de fideicomisos para diversos actos jurídicos.", icon: FileText },
+  { title: "Planificación Sucesoria", description: "Asesoramiento y planificación integral para la transmisión de bienes y derechos.", icon: Users },
   { title: "Compraventa de Inmuebles", description: "Gestión integral de operaciones inmobiliarias, desde el boleto hasta la escritura.", icon: Home },
   { title: "Constitución de Sociedades", description: "Asesoramiento y redacción de estatutos para la formación de empresas.", icon: Briefcase },
   { title: "Poderes", description: "Elaboración de poderes generales y especiales para representación legal.", icon: Scale },
-  { title: "Certificaciones", description: "Certificación de firmas, copias y diversos documentos legales.", icon: FileSignature }
+  { title: "Certificaciones Holográficas o Digitales", description: "Certificación de firmas, copias y diversos documentos legales en formato tradicional o digital.", icon: FileSignature }
 ]
 
 export function Services() {

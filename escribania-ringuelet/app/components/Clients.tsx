@@ -6,9 +6,10 @@ import { motion } from "framer-motion"
 const clients = [
   { name: "Banco Provincia", logo: "/bancoprovincia.png" },
   { name: "Banco Nación", logo: "/banconacion.png" },
-  { name: "HSBC", logo: "/hsbc.png" },
   { name: "Santander", logo: "/santander.png" },
-  { name: "BBVA", logo: "/bbva.png" }
+  { name: "Ternium Siderar", logo: "/ternium.png" },
+  { name: "Conuar", logo: "/conuar.png" },
+  { name: "Banco Hipotecario", logo: "/bancohipotecario.png" }
 ]
 
 export function Clients() {
@@ -46,4 +47,5 @@ export function Clients() {
     </section>
   )
 }
+
 

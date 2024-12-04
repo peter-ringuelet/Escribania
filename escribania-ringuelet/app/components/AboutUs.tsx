@@ -12,12 +12,12 @@ const teamMembers = [
   },
   {
     name: "Andrés A. Ringuelet",
-    role: "Escribano Titular del Registro",
+    role: "Escribano",
     image: "/papi.jpg"
   },
   {
     name: "Juan Luciano Scatolini",
-    role: "Escribano Adscripto",
+    role: "Escribano",
     image: "/luciano.jpg"
   }
 ]

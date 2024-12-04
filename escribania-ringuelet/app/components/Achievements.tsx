@@ -8,7 +8,7 @@ const achievements = [
   {
     icon: Users,
     title: "Confianza",
-    description: "Más de 10,000 clientes satisfechos en nuestra trayectoria"
+    description: "Más de 100,000 clientes satisfechos en nuestra trayectoria"
   },
   {
     icon: Award,

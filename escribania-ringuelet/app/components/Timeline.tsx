@@ -17,7 +17,12 @@ const timelineEvents = [
   {
     year: "2005",
     title: "Incorporación de Andrés A. Ringuelet",
-    description: "Andrés A. Ringuelet se une al equipo, aportando nuevas perspectivas y conocimientos."
+    description: "Andrés A. Ringuelet se une al equipo, aportando nuevas perspectivas y conocimientos tanto en la actividad pública como privada."
+  },
+  {
+    year: "2010",
+    title: "Incorporación de Juan Luciano Scatolini",
+    description: "Juan Luciano Scatolini se une al equipo, aportando perspectivas y conocimientos tanto en la actividad pública como privada."
   },
   {
     year: "2015",
