@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Footer } from '@/app/components/Footer'
+import { Header } from '@/app/components/Header'
+import { Footer } from '@/app/components/Footer'  
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from '@vercel/analytics/react';
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={inter.className}>
+        <Header />
         <main>{children}</main>
         <Footer />
         <Toaster />
@@ -28,4 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-
