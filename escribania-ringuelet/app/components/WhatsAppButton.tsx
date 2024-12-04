@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react"
 export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
-  const audioRef = useRef<any>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Inicializar el audio solo en el cliente
