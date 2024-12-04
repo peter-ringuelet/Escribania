@@ -95,7 +95,7 @@ export function ContactForm() {
             <p className="mb-2">Teléfono: (011) 42958794 / 42325695</p>
             <p className="mb-4">Email: escribania@ringueletscatolini.com.ar</p>
             <h4 className="text-lg font-semibold mb-2">Horario de Atención</h4>
-            <p className="mb-4">Lunes a Viernes de 9:00 a 17:00</p>
+            <p className="mb-4">Lunes a Viernes de 10:00 a 16:00</p>
             <div className="h-64 md:h-80 relative rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.7407669770393!2d-58.50352548477072!3d-34.86483908039491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd0f3cae9e92f%3A0x7f891ca3f4f7f24a!2sAv.%20Mariano%20Castex%203489%2C%20B1802EZE%20Canning%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1659638015407!5m2!1ses-419!2sar"

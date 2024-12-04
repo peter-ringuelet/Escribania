@@ -17,7 +17,6 @@ export default function HomePage() {
       <Services />
       <AboutUs />
       <Timeline />
-      <Achievements />
       <Clients />
       <News />
       <ContactForm />

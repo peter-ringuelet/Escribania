@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, Clock, MapPin } from 'lucide-react'
+import { CheckCircle, Clock, MapPin, Users } from 'lucide-react'
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -11,11 +11,12 @@ export function Features() {
   return (
     <section className="border-t border-[#231f20] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-3" ref={ref}>
+        <div className="grid gap-8 md:grid-cols-4" ref={ref}>
           {[
             { icon: CheckCircle, title: "Experiencia Comprobada", description: "Más de 50 años de trayectoria en servicios notariales" },
             { icon: Clock, title: "Atención Personalizada", description: "Asesoramiento profesional y seguimiento de cada caso" },
-            { icon: MapPin, title: "Ubicación Estratégica", description: "Fácil acceso desde Canning y zonas aledañas" }
+            { icon: MapPin, title: "Ubicación Estratégica", description: "Fácil acceso desde Canning y zonas aledañas" },
+            { icon: Users, title: "Confianza", description: "Más de 100,000 clientes satisfechos en nuestra trayectoria" }
           ].map((feature, index) => (
             <motion.div
               key={index}

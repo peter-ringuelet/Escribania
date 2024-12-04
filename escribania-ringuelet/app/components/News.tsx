@@ -8,49 +8,36 @@ import { FileDown, ChevronLeft, ChevronRight, Calendar } from 'lucide-react'
 import Image from 'next/image'
 
 const news = [
-  { 
-    title: "Cambios en la ley de alquileres", 
-    description: "Análisis de las recientes modificaciones a la ley de alquileres y su impacto en propietarios e inquilinos.", 
-    date: "2023-11-15",
-    pdf: "/example.pdf",
+  {
+    title: "Modificaciones introducidas por la Ley Impositiva 2024",
+    description: "Principales cambios en impuestos como Sellos y Transmisión Gratuita de Bienes, incluyendo nuevas alícuotas y exenciones relacionadas con inmuebles y créditos hipotecarios.",
+    date: "2024-01-02",
+    pdf: "/news1.pdf",
     image: "/news.webp"
   },
-  { 
-    title: "Guía para la sucesión de bienes", 
-    description: "Pasos a seguir para iniciar y llevar a cabo un proceso sucesorio en Argentina.", 
-    date: "2023-10-22",
-    pdf: "/example3.pdf",
+  {
+    title: "Actualización de montos y alícuotas en la actividad notarial",
+    description: "Incluye los valores actualizados para impuestos como Sellos y Transmisión Gratuita de Bienes, además de los parámetros del Código de Oferta de Transferencia de Inmuebles (COTI) y disposiciones sobre prevención de lavado de activos.",
+    date: "2024-07-31",
+    pdf: "/news2.pdf",
     image: "/news2.webp"
   },
-  { 
-    title: "Ventajas de constituir una SAS", 
-    description: "Beneficios y consideraciones al formar una Sociedad por Acciones Simplificada en Argentina.", 
-    date: "2023-09-30",
-    pdf: "/example2.pdf",
+  {
+    title: "Cuadro resumen de informes y registros para la Unidad de Información Financiera (UIF)",
+    description: "Resumen de las obligaciones de presentación a la UIF, incluyendo informes de autoevaluación de riesgos, reportes de operaciones sospechosas, y reportes sistemáticos mensuales y anuales relacionados con la prevención del lavado de activos y financiación del terrorismo.",
+    date: "2024-03-01",
+    pdf: "/news3.pdf",
     image: "/news3.webp"
   },
-  { 
-    title: "Nuevas regulaciones para escrituras digitales", 
-    description: "Implementación de tecnología blockchain en el proceso de escrituración.", 
-    date: "2023-12-05",
-    pdf: "/example3.pdf",
+  {
+    title: "Cuadro sintético sobre encuadre impositivo de la transferencia onerosa de inmuebles",
+    description: "Resumen de las implicancias fiscales para la transferencia de inmuebles según las leyes 27.430 y 27.743. Incluye cambios en el impuesto a las ganancias, derogación del impuesto a la transferencia de inmuebles y detalles sobre exenciones para ventas de casa-habitación.",
+    date: "2024-07-08",
+    pdf: "/news4.pdf",
     image: "/news4.webp"
   },
-  { 
-    title: "Impacto de la inflación en contratos a largo plazo", 
-    description: "Cómo proteger acuerdos comerciales en un contexto económico volátil.", 
-    date: "2023-11-28",
-    pdf: "/example3.pdf",
-    image: "/news5.webp"
-  },
-  { 
-    title: "Reformas en el Código Civil y Comercial", 
-    description: "Resumen de las principales modificaciones y su aplicación práctica.", 
-    date: "2023-10-10",
-    pdf: "/example3.pdf",
-    image: "/news7.webp"
-  }
-]
+];
+
 
 export function News() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -146,8 +133,10 @@ export function News() {
                           <Calendar className="h-4 w-4" />
                           {new Date(item.date).toLocaleDateString()}
                         </div>
-                        <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-                        <CardDescription className="line-clamp-2">
+                        <CardTitle className="line-clamp-3 min-h-[5rem] text-lg">
+                          {item.title}
+                        </CardTitle>
+                        <CardDescription className="line-clamp-6 min-h-[8.5rem] text-sm">
                           {item.description}
                         </CardDescription>
                       </CardHeader>
