@@ -44,7 +44,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#1d1d1f] text-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-        <span className="text-xl font-bold">
+        <button 
+          onClick={() => scrollToSection('inicio')} 
+          className="text-xl font-bold cursor-pointer"
+        >
           <Image
             src="/logoR.png"
             alt="Escribanía Ringuelet Logo"
@@ -52,7 +55,7 @@ export function Header() {
             height={40}
             priority
           />
-        </span>
+        </button>
         
         <nav className="hidden md:flex items-center space-x-6">
           {sections.map((section) => (
