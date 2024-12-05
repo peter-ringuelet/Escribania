@@ -14,9 +14,9 @@ export function Features() {
         <div className="grid gap-8 md:grid-cols-4" ref={ref}>
           {[
             { icon: CheckCircle, title: "Experiencia Comprobada", description: "Más de 50 años de trayectoria en servicios notariales" },
+            { icon: Users, title: "Confianza", description: "Más de 100,000 clientes satisfechos en nuestra trayectoria" },
             { icon: Clock, title: "Atención Personalizada", description: "Asesoramiento profesional y seguimiento de cada caso" },
-            { icon: MapPin, title: "Ubicación Estratégica", description: "Fácil acceso desde Canning y zonas aledañas" },
-            { icon: Users, title: "Confianza", description: "Más de 100,000 clientes satisfechos en nuestra trayectoria" }
+            { icon: MapPin, title: "Ubicación Estratégica", description: "Fácil acceso desde Canning y zonas aledañas" }
           ].map((feature, index) => (
             <motion.div
               key={index}
