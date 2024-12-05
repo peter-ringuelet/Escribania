@@ -15,31 +15,41 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Escribanía Ringuelet',
   description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
-  icons: {
-    icon: [
-      {
-        url: '/logo2.png',
-        sizes: '517x483',
-        type: 'image/png',
-      }
-    ],
-    shortcut: '/logo2.png',
-  },
-  manifest: '/site.webmanifest',
+  keywords: 'escribanía, notaría, escribano, notario, canning, ezeiza, buenos aires',
   openGraph: {
     title: 'Escribanía Ringuelet',
     description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
     url: 'https://ringueletscatolini.com.ar',
     siteName: 'Escribanía Ringuelet',
+    images: [
+      {
+        url: 'https://ringueletscatolini.com.ar/logo2.png',
+        width: 249,
+        height: 314,
+        alt: 'Logo Escribanía Ringuelet',
+        type: 'image/png',
+      },
+    ],
     locale: 'es_AR',
     type: 'website',
-    images: [{
-      url: 'https://ringueletscatolini.com.ar/logo2.png',
-      width: 517,
-      height: 483,
-      alt: 'Logo Escribanía Ringuelet'
-    }],
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Escribanía Ringuelet',
+    description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
+    images: ['https://ringueletscatolini.com.ar/logo2.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
