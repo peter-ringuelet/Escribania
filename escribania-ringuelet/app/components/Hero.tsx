@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative">
+    <section id="inicio" className="relative h-screen">
       <div className="absolute inset-0 z-0">
         <Image
           src="/placeholder2.webp"
@@ -23,7 +23,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center space-y-4 py-24 text-center md:py-32 lg:py-52 xl:py-52"
+        className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center h-full"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
