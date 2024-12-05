@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/app/components/Header'
@@ -8,20 +8,49 @@ import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const viewport: Viewport = {
+  themeColor: '#1d1d1f',
+}
+
 export const metadata: Metadata = {
   title: 'Escribanía Ringuelet',
   description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-    other: {
-      rel: 'icon',
-      url: '/favicon.ico',
-    },
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/favicon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png',
+      },
+      {
+        url: '/icon-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/icon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
   },
-  manifest: '/manifest.json',
-  themeColor: '#1d1d1f',
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Escribanía Ringuelet',
     description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
