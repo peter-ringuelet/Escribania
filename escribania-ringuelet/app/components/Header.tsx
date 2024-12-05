@@ -42,8 +42,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#1d1d1f] text-white">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-[#1d1d1f] text-white overflow-x-hidden">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between relative">
         <button
           onClick={() => scrollToSection('inicio')}
           className="text-xl font-bold cursor-pointer"
