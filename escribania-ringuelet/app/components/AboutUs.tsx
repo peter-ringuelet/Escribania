@@ -32,7 +32,7 @@ export function AboutUs() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="grid gap-8 md:grid-cols-2">
           <div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -40,30 +40,30 @@ export function AboutUs() {
             >
               Quiénes Somos
             </motion.h2>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <p className="mb-4">
-                Somos una escribanía con más de 50 años de trayectoria en la zona sur del Gran Buenos Aires. 
-                Fundada por el Escribano Andrés Ringuelet, quien estableció las bases de nuestra práctica 
+                Somos una escribanía con más de 50 años de trayectoria en la zona sur del Gran Buenos Aires.
+                Fundada por el Escribano Andrés Ringuelet, quien estableció las bases de nuestra práctica
                 profesional fundamentada en la excelencia y el compromiso con nuestros clientes.
               </p>
               <p className="mb-4">
-                En la actualidad, continuamos su legado adaptándonos a los nuevos tiempos, incorporando 
-                tecnología y modernizando nuestros procesos, pero manteniendo siempre los valores que nos 
+                En la actualidad, continuamos su legado adaptándonos a los nuevos tiempos, incorporando
+                tecnología y modernizando nuestros procesos, pero manteniendo siempre los valores que nos
                 distinguen: profesionalismo, confianza y dedicación personalizada a cada caso.
               </p>
               <p>
-                Nuestro equipo de profesionales altamente capacitados está comprometido con brindar 
+                Nuestro equipo de profesionales altamente capacitados está comprometido con brindar
                 soluciones eficientes y seguridad jurídica en cada trámite que realizamos.
               </p>
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -73,7 +73,12 @@ export function AboutUs() {
               src="/aboutUs.webp"
               alt="Equipo de Escribanía Ringuelet"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={90}
+              priority
               className="object-cover rounded-lg"
+              placeholder="blur"
+              blurDataURL="..."
             />
           </motion.div>
         </div>
