@@ -37,8 +37,8 @@ export function Header() {
     const section = document.getElementById(sectionId)
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
+      setIsOpen(false)
     }
-    setIsOpen(false)
   }
 
   return (
@@ -83,7 +83,10 @@ export function Header() {
               {sections.map((section) => (
                 <button
                   key={section}
-                  onClick={() => scrollToSection(section)}
+                  onClick={() => {
+                    scrollToSection(section)
+                    setIsOpen(false)
+                  }}
                   className="text-base font-medium hover:text-primary transition-colors py-4 text-left px-4 border-b border-gray-800"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
