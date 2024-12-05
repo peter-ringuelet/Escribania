@@ -154,7 +154,7 @@ export function ContactForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="escrituras">Escrituras</SelectItem>
-                  <SelectItem value="sucesiones">Sucesiones</SelectItem>
+                  <SelectItem value="sucesiones">Planificación Sucesoria</SelectItem>
                   <SelectItem value="compraventa">Compraventa de Inmuebles</SelectItem>
                   <SelectItem value="sociedades">Constitución de Sociedades</SelectItem>
                   <SelectItem value="poderes">Poderes y Autorizaciones de Viaje</SelectItem>
