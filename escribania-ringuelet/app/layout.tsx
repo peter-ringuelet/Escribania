@@ -12,14 +12,15 @@ export const metadata: Metadata = {
   title: 'Escribanía Ringuelet',
   description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
   icons: {
-    icon: '/logoR.png',
+    icon: '/favicon.ico'
   },
-  manifest: '/manifest.json',
-  themeColor: '#1d1d1f',
   openGraph: {
     title: 'Escribanía Ringuelet',
     description: 'Servicios notariales de excelencia en Canning, Buenos Aires',
-    images: ['/logoR.png'],
+    url: 'https://ringueletscatolini.com.ar',
+    siteName: 'Escribanía Ringuelet',
+    locale: 'es_AR',
+    type: 'website',
   },
 }
 
