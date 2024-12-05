@@ -1,4 +1,4 @@
-"use client"
+import { redirect } from 'next/navigation'
 
 import { MapPin, Mail, Phone } from 'lucide-react'
 
