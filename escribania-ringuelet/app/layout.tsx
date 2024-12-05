@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     icon: [
       {
         url: '/logo.png',
-        sizes: '512x512',
+        sizes: '517x483',
         type: 'image/png',
       }
     ],
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     locale: 'es_AR',
     type: 'website',
     images: [{
-      url: '/logo.png',
-      width: 512,
-      height: 512,
+      url: 'https://ringueletscatolini.com.ar/logo.png',
+      width: 517,
+      height: 483,
       alt: 'Logo Escribanía Ringuelet'
     }],
   }

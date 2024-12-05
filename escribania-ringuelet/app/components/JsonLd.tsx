@@ -30,7 +30,7 @@ export default function LocalBusinessSchema() {
                             "closes": "16:00"
                         }
                     ],
-                    "image": "https://ringueletscatolini.com.ar/logoR.png",
+                    "image": "https://ringueletscatolini.com.ar/logo.png",
                     "priceRange": "$$",
                     "description": "Servicios notariales de excelencia en Canning, Buenos Aires. Más de 50 años de experiencia.",
                     "areaServed": "Canning, Ezeiza, Buenos Aires"
