@@ -5,11 +5,11 @@ import { FileText, Users, Home, Briefcase, Scale, FileSignature } from 'lucide-r
 import { MotionWrapper } from "@/components/motion-wrapper"
 
 const services = [
-  { title: "Fideicomisos", description: "Elaboración y asesoramiento de contratos de fideicomisos para diversos actos jurídicos.", icon: FileText },
+  { title: "Fideicomisos", description: "Elaboración y asesoramiento de contratos de fideicomisos para diversas relaciones jurídicas.", icon: FileText },
   { title: "Planificación Sucesoria", description: "Asesoramiento y planificación integral para la transmisión de bienes y derechos.", icon: Users },
   { title: "Compraventa de Inmuebles", description: "Gestión integral de operaciones inmobiliarias, desde el boleto hasta la escritura.", icon: Home },
   { title: "Constitución de Sociedades", description: "Asesoramiento y redacción de estatutos para la formación de empresas.", icon: Briefcase },
-  { title: "Poderes y Autorizaciones de Viaje", description: "Elaboración de poderes generales y especiales para representación legal.", icon: Scale },
+  { title: "Poderes y Autorizaciones de Viaje", description: "Elaboración de poderes generales y especiales y autorizaciones a menores para poder viajar.", icon: Scale },
   { title: "Certificaciones Holográficas o Digitales", description: "Certificación de firmas, copias y diversos documentos legales en formato tradicional o digital.", icon: FileSignature }
 ]
 
