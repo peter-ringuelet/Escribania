@@ -94,9 +94,9 @@ export function ContactForm() {
             <p className="mb-2">Avenida Castex 3489 Oficina 6, Canning - Ezeiza, Buenos Aires</p>
             <p className="mb-2">
               Teléfono:{" "}
-              <a href="tel:42958794" className="hover:underline">(011) 42958794</a>
+              <a href="tel:01142958794" className="hover:underline">(011) 42958794</a>
               {" "}/{" "}
-              <a href="tel:42325695" className="hover:underline">(011) 42325695</a>
+              <a href="tel:01142325695" className="hover:underline">(011)42325695</a>
             </p>
             <p className="mb-4">Email: <a href="mailto:escribaniaringueletscatolini@gmail.com" className="hover:underline">escribaniaringueletscatolini@gmail.com</a></p>
             <h4 className="text-lg font-semibold mb-2">Horario de Atención</h4>
