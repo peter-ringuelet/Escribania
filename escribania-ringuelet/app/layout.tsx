@@ -18,38 +18,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
-        sizes: '48x48',
-        type: 'image/x-icon',
-      },
-      {
-        url: '/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-      {
-        url: '/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/android-chrome-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        url: '/android-chrome-512x512.png',
+        url: '/logo.png',
         sizes: '512x512',
         type: 'image/png',
-      },
+      }
     ],
-    apple: [
-      {
-        url: '/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
+    shortcut: '/logo.png',
   },
   manifest: '/site.webmanifest',
   openGraph: {
@@ -59,8 +33,13 @@ export const metadata: Metadata = {
     siteName: 'Escribanía Ringuelet',
     locale: 'es_AR',
     type: 'website',
-    images: ['/logoR.png'],
-  },
+    images: [{
+      url: '/logo.png',
+      width: 512,
+      height: 512,
+      alt: 'Logo Escribanía Ringuelet'
+    }],
+  }
 }
 
 export default function RootLayout({
