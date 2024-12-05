@@ -84,8 +84,13 @@ export function Header() {
                 <button
                   key={section}
                   onClick={() => {
-                    scrollToSection(section)
-                    setIsOpen(false)
+                    const element = document.getElementById(section);
+                    if (element) {
+                      setIsOpen(false);
+                      setTimeout(() => {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }, 100);
+                    }
                   }}
                   className="text-base font-medium hover:text-primary transition-colors py-4 text-left px-4 border-b border-gray-800"
                 >
