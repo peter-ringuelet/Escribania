@@ -1,14 +1,16 @@
 {
     "name": "Escribanía Ringuelet",
     "short_name": "Ringuelet",
+    "description": "Servicios notariales de excelencia en Canning, Buenos Aires",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1d1d1f",
+    "theme_color": "#1d1d1f",
     "icons": [
         {
-            "src": "/icon.png",
-            "sizes": "192x192",
+            "src": "/logoR.png",
+            "sizes": "any",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#1d1d1f",
-    "background_color": "#1d1d1f",
-    "display": "standalone"
+    ]
 }
