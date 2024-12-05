@@ -153,12 +153,12 @@ export function ContactForm() {
                   <SelectValue placeholder="Selecciona un servicio" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="escrituras">Escrituras</SelectItem>
+                  <SelectItem value="fideicomisos">Fideicomisos</SelectItem>
                   <SelectItem value="sucesiones">Planificación Sucesoria</SelectItem>
                   <SelectItem value="compraventa">Compraventa de Inmuebles</SelectItem>
                   <SelectItem value="sociedades">Constitución de Sociedades</SelectItem>
                   <SelectItem value="poderes">Poderes y Autorizaciones de Viaje</SelectItem>
-                  <SelectItem value="certificaciones">Certificaciones</SelectItem>
+                  <SelectItem value="certificaciones">Certificaciones Holográficas o Digitales</SelectItem>
                   <SelectItem value="otro">Otro</SelectItem>
                 </SelectContent>
               </Select>
