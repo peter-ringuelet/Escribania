@@ -79,11 +79,6 @@ const services = [
     description: "Tramitación de cesión de derechos posesorios y hereditarios de manera legal y transparente.",
     icon: Share2
   },
-  {
-    title: "Apostillas y Legalizaciones",
-    description: "Gestión de apostillas de La Haya para garantizar la validez internacional de tus documentos.",
-    icon: Globe
-  }
 ];
 
 
