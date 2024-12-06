@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative h-[100dvh] md:h-[70vh] flex items-center">
+    <section id="inicio" className="relative h-[100dvh] md:h-[65vh] flex items-center">
       <div className="container mx-auto px-4 flex flex-col justify-center">
         <div className="absolute inset-0 z-0">
           <Image
