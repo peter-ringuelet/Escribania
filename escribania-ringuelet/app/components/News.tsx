@@ -89,7 +89,7 @@ export function News() {
           }}
           transition={{ 
             duration: 0.8,
-            delay: 0.2,
+            delay: 0.8,
             type: "spring",
             stiffness: 100,
             damping: 12
@@ -104,7 +104,7 @@ export function News() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
           transition={{ 
             duration: 1.4,
-            delay: 1.8,
+            delay: 2.5,
             ease: "easeOut"
           }}
         >
