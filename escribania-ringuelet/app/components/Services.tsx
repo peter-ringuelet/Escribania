@@ -93,9 +93,9 @@ export function Services() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-        duration: 0.8,
+        staggerChildren: 0.15,
+        delayChildren: 0.6,
+        duration: 1.2,
         ease: "easeOut"
       }
     }
@@ -107,7 +107,7 @@ export function Services() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         ease: "easeOut"
       }
     }
@@ -124,7 +124,7 @@ export function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
             Nuestros Servicios
