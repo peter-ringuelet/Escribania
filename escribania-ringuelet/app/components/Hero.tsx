@@ -14,8 +14,12 @@ export function Hero() {
           alt="Escribanía Ringuelet"
           layout="fill"
           objectFit="cover"
-          quality={100}
+          quality={80}
           priority
+          loading="eager"
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
