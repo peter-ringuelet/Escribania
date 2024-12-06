@@ -51,8 +51,7 @@ export function Timeline() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.7 }}
           className="text-3xl font-bold mb-12 text-center"
         >
@@ -63,8 +62,7 @@ export function Timeline() {
             <motion.div
               key={event.year}
               initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.5, delay: 0.7 + index * 0.2 }}
             >
               <TimelineItem {...event} />
