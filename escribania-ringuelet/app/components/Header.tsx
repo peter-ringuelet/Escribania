@@ -36,7 +36,14 @@ export function Header() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
+      const headerOffset = 64 // altura del header
+      const elementPosition = section.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: sectionId === 'inicio' ? 0 : offsetPosition,
+        behavior: "smooth"
+      })
       setIsOpen(false)
     }
   }
