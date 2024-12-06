@@ -8,9 +8,9 @@ import { useInView } from "framer-motion"
 const clients = [
   { name: "Banco Provincia", logo: "/bancoProvincia.png" },
   { name: "Banco Nación", logo: "/bancoNacion.png" },
-  { name: "Santander", logo: "/santander.png" },
-  { name: "Ternium Siderar", logo: "/ternium.png" },
-  { name: "Conuar", logo: "/conuar.png" },
+  //{ name: "Santander", logo: "/santander.png" },
+  //{ name: "Ternium Siderar", logo: "/ternium.png" },
+  //{ name: "Conuar", logo: "/conuar.png" },
   { name: "Banco Hipotecario", logo: "/bancohipotecario.png" }
 ]
 
@@ -27,9 +27,9 @@ export function Clients() {
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-12 text-center"
         >
-          Empresas que Confían en Nosotros
+          Notarios de la Nómina
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
