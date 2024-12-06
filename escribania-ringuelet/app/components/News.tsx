@@ -81,7 +81,7 @@ export function News() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
           transition={{ 
             duration: 1,
-            delay: 0.2,
+            delay: 0.8,
             ease: "easeOut"
           }}
           className="text-3xl font-bold mb-8 text-center"
@@ -94,7 +94,7 @@ export function News() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
           transition={{ 
             duration: 1.2,
-            delay: 0.8,
+            delay: 1.8,
             ease: "easeOut"
           }}
         >
