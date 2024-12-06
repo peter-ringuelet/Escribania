@@ -4,7 +4,6 @@ import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { TeamMember } from "@/components/team-member"
-import { MotionWrapper } from "@/components/motion-wrapper"
 const teamMembers = [
   {
     name: "Andrés Ringuelet",
