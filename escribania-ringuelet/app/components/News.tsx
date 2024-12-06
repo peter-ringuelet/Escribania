@@ -81,9 +81,12 @@ export function News() {
     <section id="noticias" className="py-16 md:py-24 bg-gray-50" ref={ref}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ 
+            duration: 1.2,
+            ease: "easeOut"
+          }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Noticias
@@ -104,22 +107,16 @@ export function News() {
                   }`}
                 >
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
-                    animate={
-                      isInView || animatingIndex === index 
-                        ? { opacity: 1, scale: 1, rotateY: 0 } 
-                        : { opacity: 0, scale: 0.8, rotateY: 90 }
-                    }
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                     transition={{
-                      duration: 1.4,
-                      delay: isInView ? index * 0.65 : 0,
-                      type: "spring",
-                      stiffness: 70,
-                      damping: 11
+                      duration: 1.2,
+                      delay: 0.4 + index * 0.2,
+                      ease: "easeOut"
                     }}
                     className="h-full"
                   >
-                    <Card className="h-full flex flex-col overflow-hidden">
+                    <Card className="h-full flex flex-col">
                       <div className="relative h-48">
                         <Image
                           src={item.image}
@@ -157,24 +154,31 @@ export function News() {
               ))}
             </div>
           </div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 -left-4 transform -translate-y-1/2"
-            onClick={prevSlide}
-            aria-label="Noticia anterior"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2"
           >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2"
-            onClick={nextSlide}
-            aria-label="Siguiente noticia"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className="bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={nextSlide}
+              disabled={currentIndex >= news.length - slidesToShow}
+              className="bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </motion.div>
         </div>
         <div className="flex justify-center mt-4">
           {Array.from({ length: news.length - slidesToShow + 1 }).map((_, index) => (
