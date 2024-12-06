@@ -87,7 +87,7 @@ export function ContactForm() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ 
               duration: 0.7,
-              delay: 0.4,
+              delay: 0.8,
               ease: "easeOut"
             }}
             className="col-span-2 md:col-span-1"
@@ -148,7 +148,7 @@ export function ContactForm() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ 
               duration: 1.2,
-              delay: 0.6,
+              delay: 1.2,
               ease: "easeOut"
             }}
             className="col-span-2 md:col-span-1"

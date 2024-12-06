@@ -77,12 +77,22 @@ export function News() {
     <section id="noticias" className="py-16 md:py-24 bg-gray-50" ref={ref}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          initial={{ opacity: 0, x: 100 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { 
+            opacity: 1, 
+            y: 0,
+            scale: 1
+          } : { 
+            opacity: 0, 
+            y: 50,
+            scale: 0.8
+          }}
           transition={{ 
-            duration: 1.2,
-            delay: 0.8,
-            ease: "easeOut"
+            duration: 0.8,
+            delay: 0.2,
+            type: "spring",
+            stiffness: 100,
+            damping: 12
           }}
           className="text-3xl font-bold mb-8 text-center"
         >
