@@ -88,7 +88,7 @@ export function ContactForm() {
               duration: 0.9,
               ease: "easeOut"
             }}
-            className="space-y-4"
+            className="space-y-4 order-2 md:order-1"
           >
             <h3 className="text-xl font-semibold mb-4">Información de Contacto</h3>
             <p className="mb-2">Avenida Castex 3489 Oficina 6, Canning - Ezeiza, Buenos Aires</p>
@@ -122,6 +122,7 @@ export function ContactForm() {
               delay: 0.2,
               ease: "easeOut"
             }}
+            className="order-1 md:order-2"
           >
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
