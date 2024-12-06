@@ -93,9 +93,9 @@ export function Services() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 1.2,
-        duration: 1.5,
+        staggerChildren: 0.2,
+        delayChildren: 2,
+        duration: 2,
         ease: "easeOut"
       }
     }

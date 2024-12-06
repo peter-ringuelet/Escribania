@@ -72,7 +72,8 @@ export function ContactForm() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ 
-            duration: 0.8,
+            duration: 1.5,
+            delay: 1,
             ease: "easeOut"
           }}
           viewport={{ once: true }}
@@ -85,7 +86,8 @@ export function ContactForm() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ 
-              duration: 0.9,
+              duration: 1.5,
+              delay: 2,
               ease: "easeOut"
             }}
             className="space-y-4 order-2 md:order-1"

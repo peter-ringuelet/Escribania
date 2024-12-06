@@ -40,14 +40,14 @@ export function Timeline() {
   return (
     <section id="trayectoria" className="py-16 md:py-24">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MotionWrapper>
+        <MotionWrapper delay={1.5}>
           <h2 className="text-3xl font-bold mb-12 text-center">
             Nuestra Trayectoria
           </h2>
         </MotionWrapper>
         <div className="space-y-8 max-w-3xl mx-auto">
           {timelineEvents.map((event, index) => (
-            <MotionWrapper key={event.year} delay={index * 0.2}>
+            <MotionWrapper key={event.year} delay={2 + index * 0.3}>
               <TimelineItem {...event} />
             </MotionWrapper>
           ))}

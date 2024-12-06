@@ -80,7 +80,8 @@ export function News() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ 
-            duration: 1.2,
+            duration: 1.5,
+            delay: 1,
             ease: "easeOut"
           }}
           className="text-3xl font-bold mb-8 text-center"
