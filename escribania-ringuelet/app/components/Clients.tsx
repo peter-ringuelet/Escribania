@@ -36,8 +36,8 @@ export function Clients() {
               initial={{ opacity: 0, x: 100 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
               transition={{ 
-                duration: 0.6,
-                delay: 0.4 + index * 0.2,
+                duration: 1,
+                delay: 0.6 + index * 0.3,
                 ease: "easeOut"
               }}
               className="flex items-center justify-center"
@@ -45,9 +45,9 @@ export function Clients() {
               <Image
                 src={client.logo}
                 alt={client.name}
-                width={120}
-                height={60}
-                className="grayscale hover:grayscale-0 transition-all duration-300"
+                width={200}
+                height={100}
+                className="grayscale hover:grayscale-0 transition-all duration-500"
               />
             </motion.div>
           ))}

@@ -88,8 +88,8 @@ export function News() {
             scale: 0.8
           }}
           transition={{ 
-            duration: 0.8,
-            delay: 0.8,
+            duration: 1.2,
+            delay: 1.2,
             type: "spring",
             stiffness: 100,
             damping: 12
@@ -103,8 +103,8 @@ export function News() {
           initial={{ opacity: 0, x: 200 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
           transition={{ 
-            duration: 1.4,
-            delay: 1.6,
+            duration: 1.8,
+            delay: 2,
             ease: "easeOut"
           }}
         >
@@ -126,8 +126,8 @@ export function News() {
                     initial={{ opacity: 0, x: 200 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
                     transition={{
-                      duration: 1.2,
-                      delay: 1.2 + index * 0.2,
+                      duration: 1.6,
+                      delay: 1.6 + index * 0.3,
                       ease: "easeOut"
                     }}
                     className="h-full"
@@ -173,7 +173,10 @@ export function News() {
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 1.2, delay: 1.5 }}
+            transition={{ 
+              duration: 1.6,
+              delay: 2.2
+            }}
             className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2"
           >
             <Button

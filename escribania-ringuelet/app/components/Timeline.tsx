@@ -52,7 +52,7 @@ export function Timeline() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 1.2 }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Nuestra Trayectoria
@@ -63,7 +63,10 @@ export function Timeline() {
               key={event.year}
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.3 }}
+              transition={{ 
+                duration: 0.8,
+                delay: 1.2 + index * 0.5
+              }}
             >
               <TimelineItem {...event} />
             </motion.div>
