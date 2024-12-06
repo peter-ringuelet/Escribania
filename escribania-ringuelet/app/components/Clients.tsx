@@ -27,7 +27,7 @@ export function Clients() {
           transition={{ duration: 0.5 }}
           className="text-3xl font-bold mb-12 text-center"
         >
-          Notarios de la Nómina
+          Notarios de la Nómina de las siguientes entidades bancarias
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {clients.map((client, index) => (

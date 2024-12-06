@@ -5,13 +5,73 @@ import { FileText, Users, Home, Briefcase, Scale, FileSignature } from 'lucide-r
 import { MotionWrapper } from "@/components/motion-wrapper"
 
 const services = [
-  { title: "Fideicomisos", description: "Elaboración y asesoramiento de contratos de fideicomisos para diversas relaciones jurídicas.", icon: FileText },
-  { title: "Planificación Sucesoria", description: "Asesoramiento y planificación integral para la transmisión de bienes y derechos.", icon: Users },
-  { title: "Compraventa de Inmuebles", description: "Gestión integral de operaciones inmobiliarias, desde el boleto hasta la escritura.", icon: Home },
-  { title: "Constitución de Sociedades", description: "Asesoramiento y redacción de estatutos para la formación de empresas.", icon: Briefcase },
-  { title: "Poderes y Autorizaciones de Viaje", description: "Elaboración de poderes generales y especiales y autorizaciones a menores para poder viajar.", icon: Scale },
-  { title: "Certificaciones Holográficas o Digitales", description: "Certificación de firmas, copias y diversos documentos legales en formato tradicional o digital.", icon: FileSignature }
-]
+  {
+    title: "Fideicomisos",
+    description: "Elaboración y asesoramiento de contratos de fideicomisos, incluyendo fideicomisos inmobiliarios y de administración.",
+    icon: "FileText"
+  },
+  {
+    title: "Planificación Sucesoria",
+    description: "Asesoramiento integral para organizar la transmisión de bienes y evitar conflictos futuros.",
+    icon: "Users"
+  },
+  {
+    title: "Compraventa de Inmuebles",
+    description: "Gestión completa de operaciones inmobiliarias, desde la reserva hasta la escritura pública.",
+    icon: "Home"
+  },
+  {
+    title: "Constitución de Sociedades",
+    description: "Asesoramiento para elegir el tipo de sociedad adecuado y redacción de estatutos legales.",
+    icon: "Briefcase"
+  },
+  {
+    title: "Autorizaciones y Poderes",
+    description: "Tramitación de autorizaciones de viaje para menores y poderes generales o específicos.",
+    icon: "Key"
+  },
+  {
+    title: "Certificaciones",
+    description: "Certificación de firmas, copias, domicilios y documentos notariales en formato físico o digital.",
+    icon: "FileSignature"
+  },
+  {
+    title: "Protección de Vivienda",
+    description: "Asesoramiento para inscribir tu vivienda en el Régimen de Protección de la Vivienda, resguardándola de embargos.",
+    icon: "Shield"
+  },
+  {
+    title: "Actas Notariales",
+    description: "Documentación de hechos o situaciones específicas con valor probatorio mediante actas notariales.",
+    icon: "Edit3"
+  },
+  {
+    title: "Donaciones",
+    description: "Gestión legal de donaciones de inmuebles para planificar tu patrimonio en vida.",
+    icon: "Gift"
+  },
+  {
+    title: "Autoprotección",
+    description: "Asesoramiento para decidir el manejo de tus bienes y derechos si no podés hacerlo por vos mismo.",
+    icon: "ShieldCheck"
+  },
+  {
+    title: "Régimen Patrimonial del Matrimonio",
+    description: "Asesoramiento en regímenes de comunidad o separación de bienes y en convenciones matrimoniales.",
+    icon: "Heart"
+  },
+  {
+    title: "Cesión de Derechos",
+    description: "Tramitación de cesión de derechos posesorios y hereditarios de manera legal y transparente.",
+    icon: "Share"
+  },
+  {
+    title: "Apostillas y Legalizaciones",
+    description: "Gestión de apostillas de La Haya para garantizar la validez internacional de tus documentos.",
+    icon: "Globe"
+  }
+];
+
 
 export function Services() {
   return (
