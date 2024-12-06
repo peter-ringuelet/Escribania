@@ -77,18 +77,27 @@ export function News() {
     <section id="noticias" className="py-16 md:py-24 bg-gray-50" ref={ref}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
           transition={{ 
-            duration: 1.5,
-            delay: 1,
+            duration: 1,
+            delay: 0.2,
             ease: "easeOut"
           }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Noticias
         </motion.h2>
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0, x: 200 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
+          transition={{ 
+            duration: 1.2,
+            delay: 0.8,
+            ease: "easeOut"
+          }}
+        >
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-700 ease-out"
@@ -104,11 +113,11 @@ export function News() {
                   }`}
                 >
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
                     transition={{
-                      duration: 1.2,
-                      delay: 0.8 + index * 0.4,
+                      duration: 1,
+                      delay: 1.2 + index * 0.2,
                       ease: "easeOut"
                     }}
                     className="h-full"
@@ -152,9 +161,9 @@ export function News() {
             </div>
           </div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            transition={{ duration: 1, delay: 1.5 }}
             className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2"
           >
             <Button
@@ -176,7 +185,7 @@ export function News() {
               <ChevronRight className="h-4 w-4" />
             </Button>
           </motion.div>
-        </div>
+        </motion.div>
         <div className="flex justify-center mt-4">
           {Array.from({ length: news.length - slidesToShow + 1 }).map((_, index) => (
             <button
