@@ -24,7 +24,7 @@ export function Clients() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Notarios de la Nómina de las siguientes entidades bancarias
@@ -33,11 +33,11 @@ export function Clients() {
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 0, x: 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
               transition={{ 
-                duration: 0.7,
-                delay: index * 0.2,
+                duration: 1,
+                delay: 0.5 + index * 0.3,
                 ease: "easeOut"
               }}
               className="flex items-center justify-center"
