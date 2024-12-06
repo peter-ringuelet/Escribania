@@ -30,17 +30,17 @@ export function AboutUs() {
   return (
     <section id="nosotros" className="py-16 md:py-24">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="text-3xl font-bold mb-8 text-center"
+        >
+          Quiénes Somos
+        </motion.h2>
+
         <div ref={ref} className="grid gap-8 md:grid-cols-2">
           <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="text-3xl font-bold mb-4"
-            >
-              Quiénes Somos
-            </motion.h2>
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
