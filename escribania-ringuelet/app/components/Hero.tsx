@@ -7,8 +7,8 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section className="relative h-[100dvh] md:h-[80vh] flex items-center">
-      <div className="container mx-auto px-4 py-8 md:py-12 flex flex-col justify-center md:justify-start md:mt-16">
+    <section id="inicio" className="relative h-[100dvh] md:h-[70vh] flex items-center">
+      <div className="container mx-auto px-4 flex flex-col justify-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="/placeholder2.webp"

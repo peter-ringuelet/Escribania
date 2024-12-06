@@ -36,9 +36,9 @@ export function Header() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
     if (section) {
-      const headerOffset = 64 // altura del header
-      const elementPosition = section.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      const headerOffset = 64
+      const elementPosition = section.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - headerOffset
 
       window.scrollTo({
         top: sectionId === 'inicio' ? 0 : offsetPosition,
