@@ -104,7 +104,7 @@ export function News() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
           transition={{ 
             duration: 1.4,
-            delay: 2.5,
+            delay: 2,
             ease: "easeOut"
           }}
         >
