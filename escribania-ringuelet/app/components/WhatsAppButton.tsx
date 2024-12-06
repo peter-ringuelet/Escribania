@@ -25,7 +25,7 @@ export function WhatsAppButton() {
         className="mr-2 text-sm bg-white p-2 rounded-lg shadow-md hidden md:block"
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 2.5 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 3.3 }}
       >
         ¿Consultas? Escríbenos por WhatsApp
       </motion.p>
@@ -37,7 +37,7 @@ export function WhatsAppButton() {
         onClick={handleButtonClick}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 2.2 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 3 }}
       >
         <Button 
           size="lg" 
