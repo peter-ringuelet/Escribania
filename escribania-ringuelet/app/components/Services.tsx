@@ -16,7 +16,7 @@ import {
   Share2,
   Globe
 } from 'lucide-react'
-import { MotionWrapper } from "@/components/motion-wrapper"
+import { motion } from "framer-motion"
 
 const services = [
   {
@@ -91,14 +91,31 @@ export function Services() {
   return (
     <section id="servicios" className="py-16 md:py-24 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MotionWrapper>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
             Nuestros Servicios
           </h2>
-        </MotionWrapper>
+        </motion.div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <MotionWrapper key={index} delay={index * 0.1}>
+            <motion.div 
+              key={index} 
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.6 + index * 0.1 }}
+            >
               <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 text-black">
@@ -112,7 +129,7 @@ export function Services() {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </MotionWrapper>
+            </motion.div>
           ))}
         </div>
       </div>
