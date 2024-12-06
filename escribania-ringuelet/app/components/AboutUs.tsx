@@ -89,9 +89,9 @@ export function AboutUs() {
           <h3 className="text-2xl font-semibold mb-8 text-center">Nuestro Equipo</h3>
           <div className="grid gap-8 md:grid-cols-3">
             {teamMembers.map((member, index) => (
-              <TeamMember 
-                key={member.name} 
-                {...member} 
+              <TeamMember
+                key={member.name}
+                {...member}
                 inView={isInView}
                 animationDelay={2.4 + index * 0.4}
               />
