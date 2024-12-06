@@ -97,7 +97,8 @@ export function Services() {
             visible: { opacity: 1, y: 0 }
           }}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
@@ -113,7 +114,8 @@ export function Services() {
                 visible: { opacity: 1, y: 0 }
               }}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true }}
               transition={{ delay: 0.6 + index * 0.1 }}
             >
               <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
