@@ -32,7 +32,7 @@ export function AboutUs() {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Quiénes Somos
@@ -42,7 +42,7 @@ export function AboutUs() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
           >
             <p className="mb-4">
               Somos una escribanía con más de 50 años de trayectoria en la zona sur del Gran Buenos Aires.
@@ -63,7 +63,7 @@ export function AboutUs() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
             className="relative h-64 md:h-auto"
           >
             <Image
@@ -83,7 +83,7 @@ export function AboutUs() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.2, delay: 1.8, ease: "easeOut" }}
           className="mt-16"
         >
           <h3 className="text-2xl font-semibold mb-8 text-center">Nuestro Equipo</h3>
@@ -93,7 +93,7 @@ export function AboutUs() {
                 key={member.name} 
                 {...member} 
                 inView={isInView}
-                animationDelay={1.6 + index * 0.3}
+                animationDelay={2.4 + index * 0.4}
               />
             ))}
           </div>

@@ -24,7 +24,7 @@ export function Clients() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Notarios de la Nómina de las siguientes entidades bancarias
@@ -37,7 +37,7 @@ export function Clients() {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
               transition={{ 
                 duration: 1,
-                delay: 0.5 + index * 0.3,
+                delay: 0.8 + index * 0.3,
                 ease: "easeOut"
               }}
               className="flex items-center justify-center"
