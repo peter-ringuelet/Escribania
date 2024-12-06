@@ -22,11 +22,11 @@ export function Hero() {
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
           />
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute inset-0 bg-black" 
+            className="absolute inset-0 bg-black"
           />
         </div>
         <motion.div
@@ -58,8 +58,7 @@ export function Hero() {
             transition={{ duration: 1.2, delay: 0.9, ease: "easeOut" }}
             className="mx-auto max-w-[700px] text-white md:text-xl text-center mt-6"
           >
-            Más de 50 años brindando seguridad jurídica y confianza a nuestros clientes.
-            Primer registro notarial de Ezeiza.
+            Registro Notarial N°1 de Ezeiza. Más de medio siglo brindando seguridad jurídica y confianza a nuestros clientes.
           </motion.p>
 
           <motion.div
