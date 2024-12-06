@@ -63,7 +63,7 @@ export function Timeline() {
               key={event.year}
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.5, delay: 0.7 + index * 0.2 }}
+              transition={{ duration: 0.5, delay: 0.8 + index * 0.3 }}
             >
               <TimelineItem {...event} />
             </motion.div>
