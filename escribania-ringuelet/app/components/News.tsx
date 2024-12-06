@@ -111,7 +111,7 @@ export function News() {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                     transition={{
                       duration: 1.2,
-                      delay: 0.4 + index * 0.2,
+                      delay: 0.8 + index * 0.4,
                       ease: "easeOut"
                     }}
                     className="h-full"

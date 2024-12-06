@@ -2,11 +2,22 @@
 
 import { CheckCircle, Clock, MapPin, Users } from 'lucide-react'
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 
 export function Features() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+    
+    checkIsDesktop()
+    window.addEventListener('resize', checkIsDesktop)
+    return () => window.removeEventListener('resize', checkIsDesktop)
+  }, [])
 
   return (
     <section className="border-t border-[#231f20] bg-white">
@@ -24,7 +35,7 @@ export function Features() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ 
                 duration: 0.3, 
-                delay: 0.2 + (index * 0.1)
+                delay: isDesktop ? 2 + (index * 0.2) : 0.2 + (index * 0.1)
               }}
             >
               <div className="flex items-start space-x-4">
