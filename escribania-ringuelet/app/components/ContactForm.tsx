@@ -72,8 +72,8 @@ export function ContactForm() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ 
-            duration: 1.5,
-            delay: 1,
+            duration: 1.2,
+            delay: 0.2,
             ease: "easeOut"
           }}
           viewport={{ once: true }}
@@ -86,8 +86,8 @@ export function ContactForm() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ 
-              duration: 0.9,
-              delay: 0.2,
+              duration: 0.7,
+              delay: 0.4,
               ease: "easeOut"
             }}
             className="col-span-2 md:col-span-1"
@@ -147,8 +147,8 @@ export function ContactForm() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ 
-              duration: 1.5,
-              delay: 2,
+              duration: 1.2,
+              delay: 0.6,
               ease: "easeOut"
             }}
             className="col-span-2 md:col-span-1"
