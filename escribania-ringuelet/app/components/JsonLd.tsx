@@ -7,6 +7,13 @@ export default function LocalBusinessSchema() {
                     "@context": "https://schema.org",
                     "@type": "Notary",
                     "name": "Escribanía Ringuelet",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ringueletscatolini.com.ar/logo-112x112.png",
+                        "width": 112,
+                        "height": 112
+                    },
+                    "image": "https://ringueletscatolini.com.ar/logo2.png",
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "Avenida Castex 3489 Oficina 6",
@@ -30,7 +37,6 @@ export default function LocalBusinessSchema() {
                             "closes": "16:00"
                         }
                     ],
-                    "image": "https://ringueletscatolini.com.ar/logo2.png",
                     "priceRange": "$$",
                     "description": "Servicios notariales de excelencia en Canning, Buenos Aires. Más de 50 años de experiencia.",
                     "areaServed": "Canning, Ezeiza, Buenos Aires"

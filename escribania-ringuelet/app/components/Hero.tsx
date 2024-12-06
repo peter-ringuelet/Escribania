@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mx-auto max-w-[700px] text-white md:text-xl"
+          className="mx-auto max-w-[700px] text-white md:text-xl text-center"
         >
           Más de 50 años brindando seguridad jurídica y confianza a nuestros clientes.
           Primer registro notarial de Ezeiza.
