@@ -42,7 +42,6 @@ const news = [
 export function News() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [slidesToShow, setSlidesToShow] = useState(3)
-  const [animatingIndex, setAnimatingIndex] = useState<number | null>(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -63,17 +62,14 @@ export function News() {
   }, [])
 
   const nextSlide = () => {
-    setAnimatingIndex(currentIndex + slidesToShow)
     setCurrentIndex((prevIndex) => (prevIndex + 1) % (news.length - slidesToShow + 1))
   }
 
   const prevSlide = () => {
-    setAnimatingIndex(currentIndex - 1)
     setCurrentIndex((prevIndex) => (prevIndex - 1 + (news.length - slidesToShow + 1)) % (news.length - slidesToShow + 1))
   }
 
   const goToSlide = (index: number) => {
-    setAnimatingIndex(index)
     setCurrentIndex(index)
   }
 
