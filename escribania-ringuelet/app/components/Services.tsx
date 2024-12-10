@@ -96,25 +96,25 @@ export function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ 
+          transition={{
             duration: transitionConfig.duration,
-            ease: transitionConfig.ease 
+            ease: transitionConfig.ease
           }}
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
             Nuestros Servicios
           </h2>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
+              transition={{
                 duration: transitionConfig.duration,
                 delay: transitionConfig.baseDelay + index * (isMobile ? 0.05 : 0.1),
                 ease: transitionConfig.ease
@@ -126,8 +126,10 @@ export function Services() {
                     <service.icon className="h-5 w-5 text-secondary" />
                     {service.title}
                   </CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <CardDescription>{service.description}</CardDescription>
+                </CardContent>
               </Card>
             </motion.div>
           ))}
