@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/app/components/Header'
-import { Footer } from '@/app/components/Footer'  
+import { Footer } from '@/app/components/Footer'
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from '@vercel/analytics/react';
 
@@ -50,6 +50,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      {
+        url: '/logo-112x112.png',
+        sizes: '112x112',
+        type: 'image/png',
+      }
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -59,6 +68,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <Header />
         <main className="overflow-x-hidden">{children}</main>

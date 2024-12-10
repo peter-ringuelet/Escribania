@@ -5,7 +5,20 @@ const nextConfig = {
       {
         source: '/quienes',
         destination: '/',
-        permanent: true, // esto es importante para que Google entienda que es permanente
+        permanent: true,
+      },
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
       },
     ]
   },
