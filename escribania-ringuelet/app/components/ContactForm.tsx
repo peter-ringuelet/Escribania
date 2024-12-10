@@ -61,6 +61,8 @@ export function ContactForm() {
     }
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section id="consulta" className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,8 +82,8 @@ export function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ 
-              duration: 0.8,
-              delay: 0.2,
+              duration: isMobile ? 0.4 : 0.8,
+              delay: isMobile ? 0.2 : 0.4,
               ease: [0.25, 0.1, 0.25, 1]
             }}
             className="col-span-2 md:col-span-1"
@@ -142,8 +144,8 @@ export function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ 
-              duration: 0.8,
-              delay: 0.4,
+              duration: isMobile ? 0.4 : 0.8,
+              delay: isMobile ? 0.2 : 0.4,
               ease: [0.25, 0.1, 0.25, 1]
             }}
             className="col-span-2 md:col-span-1"

@@ -82,6 +82,13 @@ const services = [
 
 
 export function Services() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const transitionConfig = {
+    duration: isMobile ? 0.15 : 0.3,
+    baseDelay: isMobile ? 0.05 : 0.1,
+    ease: [0.25, 0.1, 0.25, 1]
+  };
+
   return (
     <section id="servicios" className="py-16 md:py-24 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +96,10 @@ export function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+          transition={{ 
+            duration: transitionConfig.duration,
+            ease: transitionConfig.ease 
+          }}
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
             Nuestros Servicios
@@ -101,32 +111,29 @@ export function Services() {
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ 
-                duration: 0.3,
-                delay: index * 0.1
+                duration: transitionConfig.duration,
+                delay: transitionConfig.baseDelay + index * (isMobile ? 0.05 : 0.1),
+                ease: transitionConfig.ease
               }}
             >
-              <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 text-black">
-                    <service.icon className="h-5 w-5 text-secondary flex-shrink-0" />
-                    <span className="line-clamp-1">{service.title}</span>
+                    <service.icon className="h-5 w-5 text-secondary" />
+                    {service.title}
                   </CardTitle>
+                  <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-black line-clamp-3">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
               </Card>
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 

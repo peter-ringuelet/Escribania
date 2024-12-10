@@ -40,6 +40,13 @@ const news = [
 
 
 export function News() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const transitionConfig = {
+    duration: isMobile ? 0.15 : 0.3,
+    baseDelay: isMobile ? 0.1 : 0.2,
+    ease: [0.25, 0.1, 0.25, 1]
+  };
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [slidesToShow, setSlidesToShow] = useState(3)
 
@@ -78,7 +85,10 @@ export function News() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+          transition={{ 
+            duration: transitionConfig.duration,
+            ease: transitionConfig.ease 
+          }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Noticias

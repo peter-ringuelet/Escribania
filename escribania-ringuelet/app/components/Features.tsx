@@ -4,6 +4,13 @@ import { motion } from "framer-motion"
 import { CheckCircle, Users, Clock, MapPin } from 'lucide-react'
 
 export function Features() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const transitionConfig = {
+    duration: isMobile ? 0.4 : 0.8,
+    baseDelay: isMobile ? 0.1 : 0.2,
+    ease: [0.25, 0.1, 0.25, 1]
+  };
+
   return (
     <section className="border-t border-[#231f20] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -20,9 +27,9 @@ export function Features() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ 
-                duration: 0.8,
-                delay: 0.2 + index * 0.2,
-                ease: [0.25, 0.1, 0.25, 1]
+                duration: transitionConfig.duration,
+                delay: transitionConfig.baseDelay + index * (isMobile ? 0.1 : 0.2),
+                ease: transitionConfig.ease
               }}
             >
               <div className="flex items-start space-x-4">

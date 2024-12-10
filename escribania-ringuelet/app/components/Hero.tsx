@@ -6,6 +6,9 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 export function Hero() {
+  const transitionDuration = typeof window !== 'undefined' && window.innerWidth < 768 ? 0.15 : 0.3;
+  const transitionDelay = typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2;
+
   return (
     <section id="inicio" className="relative h-[100dvh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] flex items-center">
       <div className="container mx-auto px-4 flex flex-col justify-center">
@@ -13,7 +16,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: transitionDuration }}
           className="absolute inset-0 z-0"
         >
           <Image
@@ -36,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: transitionDuration }}
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-white"
           >
             Servicios Notariales de{" "}
@@ -44,7 +47,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.1 }}
+              transition={{ duration: transitionDuration, delay: transitionDelay }}
               className="text-primary"
             >
               Excelencia
@@ -55,7 +58,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: transitionDuration, delay: transitionDelay + 0.1 }}
             className="mx-auto max-w-[700px] text-white md:text-xl text-center mt-6"
           >
             Registro Notarial N°1 de Ezeiza. Más de medio siglo brindando seguridad jurídica y confianza a nuestros clientes.
@@ -65,14 +68,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: transitionDuration, delay: transitionDelay + 0.2 }}
             className="flex flex-col gap-4 min-[400px]:flex-row mt-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.4 }}
+              transition={{ duration: transitionDuration, delay: transitionDelay + 0.3 }}
             >
               <Button size="lg" className="btn-primary" onClick={() => document.getElementById('consulta')?.scrollIntoView({ behavior: 'smooth' })}>
                 Solicitar Consulta <ArrowRight className="ml-2 h-4 w-4" />
@@ -83,7 +86,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.5 }}
+              transition={{ duration: transitionDuration, delay: transitionDelay + 0.4 }}
             >
               <Button size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-secondary hover:text-secondary-foreground" onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}>
                 Conocer Servicios
