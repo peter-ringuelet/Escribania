@@ -2,8 +2,6 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
 
 const clients = [
   { name: "Banco Nación", logo: "/bancoNacion.png" },
@@ -15,16 +13,14 @@ const clients = [
 ]
 
 export function Clients() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
     <section id="clientes" className="py-16 md:py-24">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Notarios de la Nómina de las siguientes entidades bancarias
@@ -33,12 +29,13 @@ export function Clients() {
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
-              initial={{ opacity: 0, x: 100 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ 
-                duration: 1,
-                delay: 0.6 + index * 0.3,
-                ease: "easeOut"
+                duration: 0.8,
+                delay: 0.2 + index * 0.2,
+                ease: [0.25, 0.1, 0.25, 1]
               }}
               className="flex items-center justify-center"
             >

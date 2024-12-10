@@ -1,8 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
 import { TimelineItem } from "@/components/timeline-item"
 
 const timelineEvents = [
@@ -39,20 +37,14 @@ const timelineEvents = [
 ]
 
 export function Timeline() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-20%" })
-
   return (
-    <section 
-      ref={sectionRef} 
-      id="trayectoria" 
-      className="py-16 md:py-24"
-    >
+    <section id="trayectoria" className="py-16 md:py-24">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 1.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Nuestra Trayectoria
@@ -61,11 +53,13 @@ export function Timeline() {
           {timelineEvents.map((event, index) => (
             <motion.div
               key={event.year}
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ 
                 duration: 0.8,
-                delay: 1.2 + index * 0.5
+                delay: 0.2 + index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1]
               }}
             >
               <TimelineItem {...event} />

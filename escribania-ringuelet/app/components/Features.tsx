@@ -1,12 +1,10 @@
 "use client"
 
 import { CheckCircle, Clock, MapPin, Users } from 'lucide-react'
-import { motion, useInView } from "framer-motion"
-import { useRef, useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function Features() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
@@ -22,7 +20,7 @@ export function Features() {
   return (
     <section className="border-t border-[#231f20] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-4" ref={ref}>
+        <div className="grid gap-8 md:grid-cols-4">
           {[
             { icon: CheckCircle, title: "Experiencia Comprobada", description: "Más de 50 años de trayectoria en servicios notariales" },
             { icon: Users, title: "Confianza", description: "Más de 80,000 clientes en nuestra trayectoria" },
@@ -32,10 +30,11 @@ export function Features() {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ 
-                duration: 0.3, 
-                delay: isDesktop ? 2 + (index * 0.2) : 0.2 + (index * 0.1)
+                duration: 0.3,
+                delay: index * 0.1
               }}
             >
               <div className="flex items-start space-x-4">

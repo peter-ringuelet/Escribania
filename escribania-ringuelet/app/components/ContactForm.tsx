@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from 'react'
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useToast } from "@/hooks/use-toast"
 
 export function ContactForm() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,29 +62,27 @@ export function ContactForm() {
   };
 
   return (
-    <section id="consulta" className="py-16 md:py-24 bg-muted/30">
+    <section id="consulta" className="py-16 md:py-24 bg-gray-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 1.2,
-            delay: 0.5,
-            ease: "easeOut"
-          }}
           viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
           className="text-3xl font-bold mb-8 text-center"
         >
           Solicitar Consulta
         </motion.h2>
-        <div className="grid gap-8 md:grid-cols-2" ref={ref}>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ 
-              duration: 0.7,
-              delay: 1.2,
-              ease: "easeOut"
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.25, 0.1, 0.25, 1]
             }}
             className="col-span-2 md:col-span-1"
           >
@@ -144,12 +138,13 @@ export function ContactForm() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ 
-              duration: 1.2,
-              delay: 1.5,
-              ease: "easeOut"
+              duration: 0.8,
+              delay: 0.4,
+              ease: [0.25, 0.1, 0.25, 1]
             }}
             className="col-span-2 md:col-span-1"
           >

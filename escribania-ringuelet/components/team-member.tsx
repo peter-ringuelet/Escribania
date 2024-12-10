@@ -6,35 +6,55 @@ interface TeamMemberProps {
   name: string
   role: string
   image: string
-  inView: boolean
-  animationDelay?: number
 }
 
-export function TeamMember({ name, role, image, inView, animationDelay = 0 }: TeamMemberProps) {
+export function TeamMember({ name, role, image }: TeamMemberProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-      transition={{ 
-        duration: 0.8,
-        delay: animationDelay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      className="text-center"
-    >
-      <Card>
-        <CardHeader className="space-y-4">
+    <Card>
+      <CardHeader className="space-y-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+        >
           <Avatar className="w-32 h-32 mx-auto">
             <AvatarImage src={image} alt={name} />
             <AvatarFallback>{name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
           </Avatar>
-        </CardHeader>
-        <CardContent>
-          <h3 className="text-xl font-semibold text-center">{name}</h3>
-          <p className="text-muted-foreground text-center">{role}</p>
-        </CardContent>
-      </Card>
-    </motion.div>
+        </motion.div>
+      </CardHeader>
+      <CardContent>
+        <motion.h3
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+          className="text-xl font-semibold text-center"
+        >
+          {name}
+        </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+          className="text-muted-foreground text-center"
+        >
+          {role}
+        </motion.p>
+      </CardContent>
+    </Card>
   )
 }
-

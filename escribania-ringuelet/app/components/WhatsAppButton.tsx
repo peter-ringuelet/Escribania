@@ -37,7 +37,7 @@ export function WhatsAppButton() {
         onClick={handleButtonClick}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 3 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 2 }}
       >
         <Button 
           size="lg" 

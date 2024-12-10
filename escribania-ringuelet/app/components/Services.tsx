@@ -82,43 +82,14 @@ const services = [
 
 
 export function Services() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-        delayChildren: 2,
-        duration: 2.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 2,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <section id="servicios" className="py-16 md:py-24 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 }
-          }}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 2, delay: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
           <h2 className="text-3xl font-bold mb-8 text-center text-[#231f20]">
             Nuestros Servicios
@@ -126,15 +97,17 @@ export function Services() {
         </motion.div>
         <motion.div 
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
         >
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.3,
+                delay: index * 0.1
+              }}
             >
               <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardHeader className="flex-shrink-0">
