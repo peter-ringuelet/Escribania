@@ -1,22 +1,9 @@
 "use client"
 
-import { CheckCircle, Clock, MapPin, Users } from 'lucide-react'
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { CheckCircle, Users, Clock, MapPin } from 'lucide-react'
 
 export function Features() {
-  const [isDesktop, setIsDesktop] = useState(false)
-
-  useEffect(() => {
-    const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 768)
-    }
-    
-    checkIsDesktop()
-    window.addEventListener('resize', checkIsDesktop)
-    return () => window.removeEventListener('resize', checkIsDesktop)
-  }, [])
-
   return (
     <section className="border-t border-[#231f20] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -29,12 +16,13 @@ export function Features() {
           ].map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ 
-                duration: 0.3,
-                delay: index * 0.1
+                duration: 0.8,
+                delay: 0.2 + index * 0.2,
+                ease: [0.25, 0.1, 0.25, 1]
               }}
             >
               <div className="flex items-start space-x-4">
