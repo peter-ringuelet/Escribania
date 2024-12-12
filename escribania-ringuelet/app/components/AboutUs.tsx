@@ -24,8 +24,8 @@ const teamMembers = [
 export function AboutUs() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const transitionConfig = {
-    duration: isMobile ? 0.3 : 0.5,
-    baseDelay: isMobile ? 0.1 : 0.15,
+    duration: isMobile ? 0.2 : 0.5,
+    baseDelay: isMobile ? 0.05 : 0.15,
     ease: [0.22, 1, 0.36, 1]
   };
 
@@ -114,12 +114,15 @@ export function AboutUs() {
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
+              transition={{ 
+                duration: isMobile ? 0.2 : 0.3, 
+                delay: isMobile ? 0.3 + index * 0.05 : 0.6 + index * 0.1 
+              }}
             >
-              <TeamMember {...member} />
+              <TeamMember {...member} isMobile={isMobile} />
             </motion.div>
           ))}
         </div>

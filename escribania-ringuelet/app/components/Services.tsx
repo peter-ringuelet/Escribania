@@ -84,8 +84,8 @@ const services = [
 export function Services() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const transitionConfig = {
-    duration: isMobile ? 0.3 : 0.5,
-    baseDelay: isMobile ? 0.1 : 0.15,
+    duration: isMobile ? 0.2 : 0.5,
+    baseDelay: isMobile ? 0.05 : 0.15,
     ease: [0.22, 1, 0.36, 1]
   };
 

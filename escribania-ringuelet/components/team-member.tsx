@@ -6,9 +6,12 @@ interface TeamMemberProps {
   name: string
   role: string
   image: string
+  isMobile?: boolean
 }
 
-export function TeamMember({ name, role, image }: TeamMemberProps) {
+export function TeamMember({ name, role, image, isMobile = false }: TeamMemberProps) {
+  const duration = isMobile ? 0.2 : 0.5;
+  
   return (
     <Card>
       <CardHeader className="space-y-4">
@@ -17,7 +20,7 @@ export function TeamMember({ name, role, image }: TeamMemberProps) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{
-            duration: 0.5,
+            duration: duration,
             ease: [0.22, 1, 0.36, 1]
           }}
         >
@@ -33,8 +36,8 @@ export function TeamMember({ name, role, image }: TeamMemberProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.5,
-            delay: 0.2,
+            duration: duration,
+            delay: isMobile ? 0.1 : 0.2,
             ease: [0.25, 0.1, 0.25, 1],
           }}
           className="text-xl font-semibold text-center"
@@ -46,8 +49,8 @@ export function TeamMember({ name, role, image }: TeamMemberProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.5,
-            delay: 0.3,
+            duration: duration,
+            delay: isMobile ? 0.15 : 0.3,
             ease: [0.25, 0.1, 0.25, 1],
           }}
           className="text-muted-foreground text-center"
