@@ -6,9 +6,9 @@ import { CheckCircle, Users, Clock, MapPin } from 'lucide-react'
 export function Features() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const transitionConfig = {
-    duration: isMobile ? 0.4 : 0.8,
-    baseDelay: isMobile ? 0.1 : 0.2,
-    ease: [0.25, 0.1, 0.25, 1]
+    duration: isMobile ? 0.3 : 0.5,
+    baseDelay: isMobile ? 0.1 : 0.15,
+    ease: [0.22, 1, 0.36, 1]
   };
 
   return (

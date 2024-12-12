@@ -13,12 +13,12 @@ export function TeamMember({ name, role, image }: TeamMemberProps) {
     <Card>
       <CardHeader className="space-y-4">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{
             duration: 0.5,
-            ease: [0.25, 0.1, 0.25, 1],
+            ease: [0.22, 1, 0.36, 1]
           }}
         >
           <Avatar className="w-32 h-32 mx-auto">

@@ -84,9 +84,9 @@ const services = [
 export function Services() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const transitionConfig = {
-    duration: isMobile ? 0.15 : 0.3,
-    baseDelay: isMobile ? 0.05 : 0.1,
-    ease: [0.25, 0.1, 0.25, 1]
+    duration: isMobile ? 0.3 : 0.5,
+    baseDelay: isMobile ? 0.1 : 0.15,
+    ease: [0.22, 1, 0.36, 1]
   };
 
   return (
@@ -107,20 +107,24 @@ export function Services() {
         </motion.div>
         <motion.div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{
                 duration: transitionConfig.duration,
-                delay: transitionConfig.baseDelay + index * (isMobile ? 0.05 : 0.1),
+                delay: transitionConfig.baseDelay * (index % 3),
                 ease: transitionConfig.ease
               }}
             >
-              <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
+              <Card className="h-full flex flex-col bg-card border-muted shadow-sm hover:shadow-md transition-all duration-500 hover:scale-[1.03]">
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2 text-black">
                     <service.icon className="h-5 w-5 text-secondary" />

@@ -42,9 +42,9 @@ const news = [
 export function News() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const transitionConfig = {
-    duration: isMobile ? 0.15 : 0.3,
-    baseDelay: isMobile ? 0.1 : 0.2,
-    ease: [0.25, 0.1, 0.25, 1]
+    duration: isMobile ? 0.3 : 0.5,
+    baseDelay: isMobile ? 0.1 : 0.15,
+    ease: [0.22, 1, 0.36, 1]
   };
 
   const [currentIndex, setCurrentIndex] = useState(0)

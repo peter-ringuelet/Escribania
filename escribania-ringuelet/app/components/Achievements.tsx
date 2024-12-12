@@ -37,9 +37,9 @@ export function Achievements() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           ref={ref}
-          initial={{ opacity: 0, x: 100 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="text-3xl font-bold mb-12 text-center"
         >
           Nuestros Logros
@@ -48,12 +48,12 @@ export function Achievements() {
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}
-              initial={{ opacity: 0, x: 100 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ 
-                duration: 0.6,
+                duration: 0.5,
                 delay: index * 0.25,
-                ease: "easeOut"
+                ease: [0.22, 1, 0.36, 1]
               }}
             >
               <AchievementCard {...achievement} />
