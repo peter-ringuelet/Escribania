@@ -92,18 +92,26 @@ export function Header() {
 
             <div className="relative z-10">
               <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-                <Image
-                  src="/logoR.png"
-                  alt="Escribanía Ringuelet Logo"
-                  width={150}
-                  height={40}
-                  className="opacity-100"
-                  priority
-                />
+                <button
+                  onClick={() => {
+                    scrollToSection('inicio');
+                    setIsOpen(false);
+                  }}
+                  className="cursor-pointer"
+                >
+                  <Image
+                    src="/logoR.png"
+                    alt="Escribanía Ringuelet Logo"
+                    width={150}
+                    height={40}
+                    className="opacity-100"
+                    priority
+                  />
+                </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-primary transition-all duration-300 hover:rotate-90 bg-transparent p-2 rounded-full outline-none focus:outline-none active:outline-none"
-                  style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
+                  className="text-white hover:text-primary transition-all duration-300 hover:rotate-90 bg-transparent p-2 rounded-full"
+                  style={{ WebkitTapHighlightColor: 'transparent' }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
